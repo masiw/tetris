@@ -2,11 +2,17 @@
   "name": "tetris",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "build": "tsc && ts-add-js-extension --dir dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "ts-add-js-extension": "^1.6.6",
+    "typescript": "^5.9.3"
+  }
 }

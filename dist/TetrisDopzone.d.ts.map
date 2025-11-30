@@ -1,0 +1,1 @@
+{"version":3,"file":"TetrisDopzone.d.ts","sourceRoot":"","sources":["../src/TetrisDopzone.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,aAAa,EAAE,MAAM,iBAAiB,CAAC;AAEhD,qBAAa,cAAc;IACzB,OAAO,CAAC,KAAK,CAAkB;gBAEnB,KAAK,EAAE,aAAa,EAAE;IAIlC,OAAO,CAAC,cAAc;IAmBf,QAAQ,IAAI,aAAa,EAAE;CAGnC"}
