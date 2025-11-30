@@ -38,6 +38,9 @@ export class TetrisController {
       case "ArrowDown":
         this.tetris.stepDown();
         break;
+      case "ArrowUp":
+        this.tetris.stepRotate();
+        break;
       case "n":
         this.startNewGame();
         break;

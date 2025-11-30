@@ -16,9 +16,9 @@ export class TetrisDropZone {
         // Remove line
         filteredTiles = filteredTiles.filter(tile => tile.getY() !== y);
         // Move down above lines
-        for (const tile of tiles) {
+        for (const tile of filteredTiles) {
           if (tile.getY() < y) {
-            const index = tiles.indexOf(tile);
+            const index = filteredTiles.indexOf(tile);
             filteredTiles[index] = new TetrominoTile(tile.getX(), tile.getY() + 1, tile.getColor());
           }
         }

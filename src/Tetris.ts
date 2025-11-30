@@ -110,6 +110,6 @@ export class Tetris extends EventTarget {
         return true;
       }
     }
-    return false;
+    return tetromino.checkCollision(-1, -1); // Check boundaries
   }
 }

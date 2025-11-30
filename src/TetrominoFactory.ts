@@ -9,8 +9,8 @@ export class TetrominoFactory {
       { x: 0, y: 0, color: new Color("cyan") },
       { x: 1, y: 0, color: new Color("cyan") },
       { x: 2, y: 0, color: new Color("cyan") },
-    ].map(t => new TetrominoTile(5, 0, t.color));
-    return new Tetromino(tiles);
+    ].map(t => new TetrominoTile(t.x, t.y, t.color));
+    return new Tetromino(tiles, 5, 0);
   }
   private static createOTetromino(): Tetromino {
     const tiles = [
@@ -18,8 +18,8 @@ export class TetrominoFactory {
       { x: 1, y: 0, color: new Color("yellow") },
       { x: 0, y: 1, color: new Color("yellow") },
       { x: 1, y: 1, color: new Color("yellow") },
-    ].map(t => new TetrominoTile(5, 0, t.color));
-    return new Tetromino(tiles);
+    ].map(t => new TetrominoTile(t.x, t.y, t.color));
+    return new Tetromino(tiles, 5, 0);
   }
   private static createTTetromino(): Tetromino {
     const tiles = [
@@ -27,8 +27,8 @@ export class TetrominoFactory {
       { x: 0, y: 0, color: new Color("purple") },
       { x: 1, y: 0, color: new Color("purple") },
       { x: 0, y: 1, color: new Color("purple") },
-    ].map(t => new TetrominoTile(5, 0, t.color));
-    return new Tetromino(tiles);
+    ].map(t => new TetrominoTile(t.x, t.y, t.color));
+    return new Tetromino(tiles, 5, 0);
   }
   private static createSTetromino(): Tetromino {
     const tiles = [
@@ -36,8 +36,8 @@ export class TetrominoFactory {
       { x: 1, y: 0, color: new Color("green") },
       { x: -1, y: 1, color: new Color("green") },
       { x: 0, y: 1, color: new Color("green") },
-    ].map(t => new TetrominoTile(5, 0, t.color));
-    return new Tetromino(tiles);
+    ].map(t => new TetrominoTile(t.x, t.y, t.color));
+    return new Tetromino(tiles, 5, 0);
   }
   private static createZTetromino(): Tetromino {
     const tiles = [
@@ -45,8 +45,8 @@ export class TetrominoFactory {
       { x: 0, y: 0, color: new Color("red") },
       { x: 0, y: 1, color: new Color("red") },
       { x: 1, y: 1, color: new Color("red") },
-    ].map(t => new TetrominoTile(5, 0, t.color));
-    return new Tetromino(tiles);
+    ].map(t => new TetrominoTile(t.x, t.y, t.color));
+    return new Tetromino(tiles, 5, 0);
   }
   private static createJTetromino(): Tetromino {
     const tiles = [
@@ -54,8 +54,8 @@ export class TetrominoFactory {
       { x: -1, y: 1, color: new Color("blue") },
       { x: 0, y: 0, color: new Color("blue") },
       { x: 1, y: 0, color: new Color("blue") },
-    ].map(t => new TetrominoTile(5, 0, t.color));
-    return new Tetromino(tiles);
+    ].map(t => new TetrominoTile(t.x, t.y, t.color));
+    return new Tetromino(tiles, 5, 0);
   }
   private static createLTetromino(): Tetromino {
     const tiles = [
@@ -63,8 +63,8 @@ export class TetrominoFactory {
       { x: -1, y: 0, color: new Color("orange") },
       { x: 0, y: 0, color: new Color("orange") },
       { x: 1, y: 1, color: new Color("orange") },
-    ].map(t => new TetrominoTile(5, 0, t.color));
-    return new Tetromino(tiles);
+    ].map(t => new TetrominoTile(t.x, t.y, t.color));
+    return new Tetromino(tiles, 5, 0);
   }
 
   public static createRandomTetromino(): Tetromino {
