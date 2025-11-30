@@ -1,11 +1,14 @@
 import type { Color } from "./Color";
+import type { Tetris } from "./Tetris";
 import { TetrominoTile } from "./TetrominoTile";
 
 export class TetrisRenderer {
+  private game: Tetris;
   private context: CanvasRenderingContext2D;
   private tileWidth: number;
   private tileHeight: number;
-  public constructor() {
+  public constructor(game: Tetris) {
+    this.game = game;
     const canvas = this.getCanvas();
     this.tileWidth = canvas.width / 10;
     this.tileHeight = canvas.height / 20;
@@ -40,9 +43,9 @@ export class TetrisRenderer {
     this.context.fillRect(tile.getX() * this.tileWidth, tile.getY() * this.tileHeight, this.tileWidth, this.tileHeight);
   }
 
-  public render(tiles: TetrominoTile[]): void {
+  public render(): void {
     this.clear();
-    for (const tile of tiles) {
+    for (const tile of this.game.getTiles()) {
       this.drawTile(tile);
     }
   }

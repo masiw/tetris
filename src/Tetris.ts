@@ -5,8 +5,8 @@ import { TetrominoFactory } from "./TetrominoFactory";
 import type { TetrominoTile } from "./TetrominoTile";
 
 export class Tetris extends EventTarget {
-  // private level: number = 0;
-  // private score: number = 0;
+  private level: number = 1;
+  private score: number = 0;
   private dropZone: TetrisDropZone | null = null;
   private activeTetromino: Tetromino | null = null;
 
@@ -16,8 +16,8 @@ export class Tetris extends EventTarget {
   }
 
   public startGame(): void {
-    // this.level = 0;
-    // this.score = 0;
+    this.level = 1;
+    this.score = 0;
     this.resetGame();
   }
 
@@ -26,13 +26,13 @@ export class Tetris extends EventTarget {
     this.activeTetromino = TetrominoFactory.createRandomTetromino();
   }
   
-  // public getLevel(): number {
-  //   return this.level;
-  // }
+  public getLevel(): number {
+    return this.level;
+  }
 
-  // public getScore(): number {
-  //   return this.score;
-  // }
+  public getScore(): number {
+    return this.score;
+  }
 
   public getTiles(): TetrominoTile[] {
     if (this.activeTetromino !== null && this.dropZone !== null) {
@@ -99,6 +99,7 @@ export class Tetris extends EventTarget {
         const releasedTiles = this.activeTetromino.releaseTiles();
         const updatedTiles = this.dropZone.getTiles().concat(releasedTiles);
         this.dropZone = new TetrisDropZone(updatedTiles);
+        this.updateScore(this.dropZone.getClearedLines());
         this.activeTetromino = TetrominoFactory.createRandomTetromino();
         if (this.checkCollision(this.activeTetromino)) {
           // Game over condition
@@ -120,5 +121,10 @@ export class Tetris extends EventTarget {
       }
     }
     return tetromino.checkCollision(-1, -1); // Check boundaries
+  }
+
+  private updateScore(clearedLines: number) {
+    this.score += clearedLines * clearedLines * 10 + 1;
+    this.level = Math.ceil(this.score / 500);  // increase level at every score increase of 500
   }
 }

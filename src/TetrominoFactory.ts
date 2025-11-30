@@ -4,65 +4,72 @@ import { TetrominoTile } from "./TetrominoTile";
 
 export class TetrominoFactory {
   private static createITetromino(): Tetromino {
+    const color = Color.GREEN;
     const tiles = [
-      { x: -1, y: 0, color: new Color("cyan") },
-      { x: 0, y: 0, color: new Color("cyan") },
-      { x: 1, y: 0, color: new Color("cyan") },
-      { x: 2, y: 0, color: new Color("cyan") },
+      { x: -1, y: 0, color: new Color(color) },
+      { x: 0, y: 0, color: new Color(color) },
+      { x: 1, y: 0, color: new Color(color) },
+      { x: 2, y: 0, color: new Color(color) },
     ].map(t => new TetrominoTile(t.x, t.y, t.color));
     return new Tetromino(tiles, 5, 0);
   }
   private static createOTetromino(): Tetromino {
+    const color = Color.CYAN;
     const tiles = [
-      { x: 0, y: 0, color: new Color("yellow") },
-      { x: 1, y: 0, color: new Color("yellow") },
-      { x: 0, y: 1, color: new Color("yellow") },
-      { x: 1, y: 1, color: new Color("yellow") },
+      { x: 0, y: 0, color: new Color(color) },
+      { x: 1, y: 0, color: new Color(color) },
+      { x: 0, y: 1, color: new Color(color) },
+      { x: 1, y: 1, color: new Color(color) },
     ].map(t => new TetrominoTile(t.x, t.y, t.color));
     return new Tetromino(tiles, 5, 0);
   }
   private static createTTetromino(): Tetromino {
+    const color = Color.PURPLE;
     const tiles = [
-      { x: -1, y: 0, color: new Color("purple") },
-      { x: 0, y: 0, color: new Color("purple") },
-      { x: 1, y: 0, color: new Color("purple") },
-      { x: 0, y: 1, color: new Color("purple") },
+      { x: -1, y: 0, color: new Color(color) },
+      { x: 0, y: 0, color: new Color(color) },
+      { x: 1, y: 0, color: new Color(color) },
+      { x: 0, y: 1, color: new Color(color) },
     ].map(t => new TetrominoTile(t.x, t.y, t.color));
     return new Tetromino(tiles, 5, 0);
   }
   private static createSTetromino(): Tetromino {
+    const color = Color.ORANGE;
     const tiles = [
-      { x: 0, y: 0, color: new Color("green") },
-      { x: 1, y: 0, color: new Color("green") },
-      { x: -1, y: 1, color: new Color("green") },
-      { x: 0, y: 1, color: new Color("green") },
+      { x: 0, y: 0, color: new Color(color) },
+      { x: 1, y: 0, color: new Color(color) },
+      { x: -1, y: 1, color: new Color(color) },
+      { x: 0, y: 1, color: new Color(color) },
     ].map(t => new TetrominoTile(t.x, t.y, t.color));
     return new Tetromino(tiles, 5, 0);
   }
   private static createZTetromino(): Tetromino {
+    const color = Color.YELLOW;
     const tiles = [
-      { x: -1, y: 0, color: new Color("red") },
-      { x: 0, y: 0, color: new Color("red") },
-      { x: 0, y: 1, color: new Color("red") },
-      { x: 1, y: 1, color: new Color("red") },
+      { x: -1, y: 0, color: new Color(color) },
+      { x: 0, y: 0, color: new Color(color) },
+      { x: 0, y: 1, color: new Color(color) },
+      { x: 1, y: 1, color: new Color(color) },
     ].map(t => new TetrominoTile(t.x, t.y, t.color));
     return new Tetromino(tiles, 5, 0);
   }
   private static createJTetromino(): Tetromino {
+    const color = Color.BLUE;
     const tiles = [
-      { x: -1, y: 0, color: new Color("blue") },
-      { x: -1, y: 1, color: new Color("blue") },
-      { x: 0, y: 0, color: new Color("blue") },
-      { x: 1, y: 0, color: new Color("blue") },
+      { x: -1, y: 0, color: new Color(color) },
+      { x: -1, y: 1, color: new Color(color) },
+      { x: 0, y: 0, color: new Color(color) },
+      { x: 1, y: 0, color: new Color(color) },
     ].map(t => new TetrominoTile(t.x, t.y, t.color));
     return new Tetromino(tiles, 5, 0);
   }
   private static createLTetromino(): Tetromino {
+    const color = Color.RED;
     const tiles = [
-      { x: 1, y: 0, color: new Color("orange") },
-      { x: -1, y: 0, color: new Color("orange") },
-      { x: 0, y: 0, color: new Color("orange") },
-      { x: 1, y: 1, color: new Color("orange") },
+      { x: 1, y: 0, color: new Color(color) },
+      { x: -1, y: 0, color: new Color(color) },
+      { x: 0, y: 0, color: new Color(color) },
+      { x: 1, y: 1, color: new Color(color) },
     ].map(t => new TetrominoTile(t.x, t.y, t.color));
     return new Tetromino(tiles, 5, 0);
   }

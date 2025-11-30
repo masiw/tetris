@@ -3,6 +3,7 @@ import { TetrominoTile } from "./TetrominoTile";
 
 export class TetrisDropZone {
   private tiles: TetrominoTile[];
+  private clearedLines: number = 0;
 
   constructor(tiles: TetrominoTile[]) {
     this.tiles = this.clearFullLines(tiles);
@@ -22,6 +23,9 @@ export class TetrisDropZone {
             filteredTiles[index] = new TetrominoTile(tile.getX(), tile.getY() + 1, tile.getColor());
           }
         }
+
+        // Count cleared lines
+        this.clearedLines++;
       }
     }
     return filteredTiles;
@@ -29,5 +33,9 @@ export class TetrisDropZone {
 
   public getTiles(): TetrominoTile[] {
     return this.tiles;
+  }
+
+  public getClearedLines(): number {
+    return this.clearedLines;
   }
 }

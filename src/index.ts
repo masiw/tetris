@@ -1,13 +1,15 @@
 
 import { Tetris } from "./Tetris";
 import { TetrisRenderer } from "./TetrisRenderer";
+import { GameInfoRenderer } from "./GameInfoRenderer";
 import { TetrisController } from "./TetrisController";
 
 function main(): void {
     
     const tetris = new Tetris();
-    const renderer = new TetrisRenderer();
-    const controller = new TetrisController(tetris, renderer, 500);
+    const tetrisRenderer = new TetrisRenderer(tetris);
+    const gameInfoRenderer = new GameInfoRenderer(tetris);
+    const controller = new TetrisController(tetris, tetrisRenderer, gameInfoRenderer, 1000);
     
     controller.startNewGame();
 }

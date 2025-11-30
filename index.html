@@ -3,10 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles.css">
   <title>Tetris</title>
 </head>
 <body>
-  <canvas id="gameCanvas" width="300" height="600"></canvas>
-  <script type="module" src="dist/index.js"></script>
+  <section id="game">
+    <canvas id="gameCanvas" width="300" height="600"></canvas>
+    <section id="gameInfo">
+      <div>Status: <span id="status"></span></div>
+      <div>Level: <span id="level"></span></div>
+      <div>Score: <span id="score"></span></div>
+    </section>
+    <script type="module" src="dist/index.js"></script>
+  </section>
 </body>
 </html>
