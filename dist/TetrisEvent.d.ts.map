@@ -1,1 +1,0 @@
-{"version":3,"file":"TetrisEvent.d.ts","sourceRoot":"","sources":["../src/TetrisEvent.ts"],"names":[],"mappings":"AAAA,qBAAa,WAAY,SAAQ,KAAK;IACpC,MAAM,CAAC,QAAQ,CAAC,YAAY,iBAAiB;IAC7C,MAAM,CAAC,QAAQ,CAAC,SAAS,cAAc;IACvC,MAAM,CAAC,QAAQ,CAAC,QAAQ,aAAa;IACrC,MAAM,CAAC,QAAQ,CAAC,aAAa,kBAAkB;gBAEnC,IAAI,EAAE,MAAM;CAGzB"}
