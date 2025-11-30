@@ -45,36 +45,46 @@ export class Tetris extends EventTarget {
     return this.activeTetromino !== null;
   }
   
-  public stepLeft(): void {
+  public moveLeft(): void {
     if (this.activeTetromino !== null && this.dropZone !== null) {
-      const nextTetromino = this.activeTetromino.stepLeft();
+      const nextTetromino = this.activeTetromino.moveLeft();
       if (this.checkCollision(nextTetromino) === false) {
         this.activeTetromino = nextTetromino;
       }
     }
   }
-  public stepRight(): void {
+  public moveRight(): void {
     if (this.activeTetromino !== null && this.dropZone !== null) {
-      const nextTetromino = this.activeTetromino.stepRight();
+      const nextTetromino = this.activeTetromino.moveRight();
       if (this.checkCollision(nextTetromino) === false) {
         this.activeTetromino = nextTetromino;
       }
     }
   }
-  public stepDown(): void {
+  public moveDown(): void {
     if (this.activeTetromino !== null && this.dropZone !== null) {
-      const nextTetromino = this.activeTetromino.stepDown();
+      const nextTetromino = this.activeTetromino.moveDown();
       if (this.checkCollision(nextTetromino) === false) {
         this.activeTetromino = nextTetromino;
       }
     }
   }
   
-  public stepRotate(): void {
+  public rotate(): void {
     if (this.activeTetromino !== null && this.dropZone !== null) {
-      const nextTetromino = this.activeTetromino.stepRotate();
+      const nextTetromino = this.activeTetromino.rotate();
       if (this.checkCollision(nextTetromino) === false) {
         this.activeTetromino = nextTetromino;
+      }
+    }
+  }
+
+  public drop():void {
+    if (this.activeTetromino !== null && this.dropZone !== null) {
+      const nextTetromino = this.activeTetromino.moveDown();
+      if (this.checkCollision(nextTetromino) == false) {
+        this.activeTetromino = nextTetromino;
+        this.drop();
       }
     }
   }
@@ -83,7 +93,7 @@ export class Tetris extends EventTarget {
     // Game step logic goes here
     if (this.activeTetromino !== null && this.dropZone !== null) {
       // Move active tetromino down
-      const nextTetromino = this.activeTetromino.stepDown();
+      const nextTetromino = this.activeTetromino.moveDown();
       if (this.checkCollision(nextTetromino)) {
         // Collision detected, lock tetromino in place
         const releasedTiles = this.activeTetromino.releaseTiles();

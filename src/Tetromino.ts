@@ -18,16 +18,16 @@ export class Tetromino {
     return this.tiles.map(tile => new TetrominoTile(tile.getX() + this.x, tile.getY() + this.y, tile.getColor()));
   }
 
-  public stepLeft(): Tetromino {
+  public moveLeft(): Tetromino {
     return new Tetromino(this.tiles.map(tile => tile.copy()), this.x - 1, this.y);
   }
-  public stepRight(): Tetromino {
+  public moveRight(): Tetromino {
     return new Tetromino(this.tiles.map(tile => tile.copy()), this.x + 1, this.y);
   }
-  public stepDown(): Tetromino {
+  public moveDown(): Tetromino {
     return new Tetromino(this.tiles.map(tile => tile.copy()), this.x, this.y + 1);
   }
-  public stepRotate(): Tetromino 
+  public rotate(): Tetromino 
   {
     const rotatedTiles = this.tiles.map(tile => tile.rotate());
     return new Tetromino(rotatedTiles, this.x, this.y);

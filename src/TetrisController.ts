@@ -5,6 +5,7 @@ export class TetrisController {
   private tetris: Tetris;
   private renderer: TetrisRenderer;
   private stepInteval: number;
+  private timeoutId: number = 0;
   
   constructor(tetris:Tetris, renderer: TetrisRenderer, stepInteval: number = 1000) {
     this.tetris = tetris;
@@ -13,9 +14,12 @@ export class TetrisController {
     document.addEventListener("keydown", (event) => this.handleKeyDown(event));
   }
   public startNewGame(): void {
+    if (this.timeoutId !== 0) {
+      clearTimeout(this.timeoutId);
+    }
     this.tetris.startGame();
     this.renderer.render(this.tetris.getTiles());
-    setTimeout(() => this.gameLoop(), this.stepInteval);
+    this.timeoutId = setTimeout(() => this.gameLoop(), this.stepInteval);
   }
   private gameLoop(): void {
     this.tetris.step();
@@ -23,23 +27,26 @@ export class TetrisController {
 
     if (this.tetris.inProgress()) {
       // Continue the game loop if the game is still in progress
-      setTimeout(() => this.gameLoop(), this.stepInteval);
+      this. timeoutId = setTimeout(() => this.gameLoop(), this.stepInteval);
     }
   }
 
   private handleKeyDown(event: KeyboardEvent): void {
     switch (event.key) {
       case "ArrowLeft":
-        this.tetris.stepLeft();
+        this.tetris.moveLeft();
         break;
       case "ArrowRight":
-        this.tetris.stepRight();
+        this.tetris.moveRight();
         break;
       case "ArrowDown":
-        this.tetris.stepDown();
+        this.tetris.moveDown();
         break;
       case "ArrowUp":
-        this.tetris.stepRotate();
+        this.tetris.rotate();
+        break;
+      case " ":
+        this.tetris.drop();
         break;
       case "n":
         this.startNewGame();
