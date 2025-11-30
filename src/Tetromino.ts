@@ -37,7 +37,8 @@ export class Tetromino {
     for (const tile of this.tiles) {
       const tileX = tile.getX() + this.x;
       const tileY = tile.getY() + this.y;
-      if (tileX < 0 || tileX >= 10 || tileY < 0 || tileY >= 20) {
+      // Leave more space at the top to allow for immediate rotations.
+      if (tileX < 0 || tileX >= 10 || tileY < -10 || tileY >= 20) {
         return true;
       }
       if (tileX === atX && tileY === atY) {
