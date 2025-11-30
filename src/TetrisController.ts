@@ -23,9 +23,9 @@ export class TetrisController {
   }
   private gameLoop(): void {
     this.tetris.step();
-    this.renderer.render(this.tetris.getTiles());
 
     if (this.tetris.inProgress()) {
+      this.renderer.render(this.tetris.getTiles());
       // Continue the game loop if the game is still in progress
       this. timeoutId = setTimeout(() => this.gameLoop(), this.stepInteval);
     }

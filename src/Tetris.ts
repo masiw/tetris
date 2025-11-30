@@ -103,7 +103,6 @@ export class Tetris extends EventTarget {
         if (this.checkCollision(this.activeTetromino)) {
           // Game over condition
           this.activeTetromino = null;
-          this.dispatchEvent(new TetrisEvent(TetrisEvent.GAME_OVER));
         }
         return;
       }
